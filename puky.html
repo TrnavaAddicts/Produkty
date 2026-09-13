@@ -60,7 +60,9 @@
 
         header h1 {
             font-size: 3rem;
+            font-weight: 1000;
             letter-spacing: 2px;
+            color: white;
             text-transform: uppercase;
             background: linear-gradient(90deg, var(--neon-purple), var(--neon-green), var(--neon-yellow));
             -webkit-background-clip: text;
@@ -70,6 +72,7 @@
 
         header p {
             font-size: 1.1rem;
+            font-weight: 650;
             color: #e0e0e0;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -79,18 +82,20 @@
         .btn-back {
             display: inline-block;
             padding: 0.6rem 1.2rem;
-            background: transparent;
+            background: var(--neon-purple);
+            box-shadow: 0 0 15px var(--neon-purple);
             color: var(--text-light);
             text-decoration: none;
             text-transform: uppercase;
             font-weight: bold;
-            border: 2px solid var(--neon-purple);
+            border: 0.15rem solid var(--text-dark);
             border-radius: 8px;
             transition: all 0.3s ease;
         }
 
         .btn-back:hover {
             background: var(--neon-purple);
+            border: 0.15rem solid var(--neon-purple);
             box-shadow: 0 0 15px var(--neon-purple);
         }
 
@@ -125,7 +130,7 @@
         .card-image {
             height: 280px;
             background-color: #000;
-            border-bottom: 3px solid var(--neon-green);
+            border-bottom: 3px solid var(--neon-purple);
             overflow: hidden;
         }
 
@@ -149,7 +154,8 @@
 
         .card-info h3 {
             font-size: 1.4rem;
-            color: var(--neon-green);
+            text-shadow: rgb(99, 98, 98) 2px 3px;
+            color: var(--);
             margin-bottom: 0.5rem;
             text-transform: uppercase;
         }
@@ -163,16 +169,18 @@
 
         .card-info p {
             font-size: 0.95rem;
-            color: #d1d1d1;
+            font-weight: 650;
+            color: #ffffff;
             line-height: 1.5;
         }
 
-        footer {
+      footer {
             text-align: center;
             padding: 1.5rem;
             margin-top: 2rem;
             font-size: 0.9rem;
-            color: #a0a0a0;
+            font-weight: 650;
+            color: #ffffff;
         }
 
         @media (max-width: 768px) {
@@ -201,17 +209,13 @@
                 <div class="card-info">
                     <h3>Pablo Mini Ice cold</h3>
                     <div class="price">Cena: 5€</div>
-                    <p>Na sklade: 150 kusov</p>
+                    <p>Na sklade: 100 kusov</p>
+                    <p> Počet vrecúšok: 30</p>
+                    <p> Sila: 15mg</p>
                 </div>
             </article>
 
-            <!-- Produkt 2 -->
-            
-
-            <!-- Produkt 3 -->
-            
-
-            <!-- Môžeš jednoducho skopírovať <article> blok vyššie pre ďalšie produkty -->
+        
 
         </div>
     </main>

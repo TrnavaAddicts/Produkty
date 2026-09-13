@@ -60,6 +60,7 @@
 
         header h1 {
             font-size: 3rem;
+            font-weight: 1000;
             letter-spacing: 2px;
             text-transform: uppercase;
             background: linear-gradient(90deg, var(--neon-purple), var(--neon-green), var(--neon-yellow));
@@ -70,6 +71,7 @@
 
         header p {
             font-size: 1.1rem;
+            font-weight: 650;
             color: #e0e0e0;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -79,18 +81,20 @@
         .btn-back {
             display: inline-block;
             padding: 0.6rem 1.2rem;
-            background: transparent;
+            background: var(--neon-purple);
+            box-shadow: 0 0 15px var(--neon-purple);
             color: var(--text-light);
             text-decoration: none;
             text-transform: uppercase;
             font-weight: bold;
-            border: 2px solid var(--neon-purple);
+            border: 0.15rem solid var(--text-dark);
             border-radius: 8px;
             transition: all 0.3s ease;
         }
 
         .btn-back:hover {
             background: var(--neon-purple);
+            border: 0.15rem solid var(--neon-purple);
             box-shadow: 0 0 15px var(--neon-purple);
         }
 
@@ -125,7 +129,7 @@
         .card-image {
             height: 280px;
             background-color: #000;
-            border-bottom: 3px solid var(--neon-green);
+            border-bottom: 3px solid var(--neon-purple);
             overflow: hidden;
         }
 
@@ -148,8 +152,9 @@
         }
 
         .card-info h3 {
-            font-size: 1.3rem;
-            color: var(--neon-green);
+            font-size: 1.4rem;
+            text-shadow: rgb(99, 98, 98) 2px 3px;
+            color: var(--);
             margin-bottom: 0.5rem;
             text-transform: uppercase;
         }
@@ -163,7 +168,8 @@
 
         .card-info p {
             font-size: 0.95rem;
-            color: #d1d1d1;
+            font-weight: 650;
+            color: #ffffff;
             line-height: 1.5;
         }
 
@@ -172,7 +178,8 @@
             padding: 1.5rem;
             margin-top: 2rem;
             font-size: 0.9rem;
-            color: #a0a0a0;
+            font-weight: 650;
+            color: #ffffff;
         }
 
         @media (max-width: 768px) {
@@ -196,7 +203,7 @@
             <!-- Produkt 1 -->
             <article class="catalog-card glass-panel">
                 <div class="card-image">
-                    <img src="ZOOY_liquidy.png" alt="ZOOY Mixed Berry">
+                    <img src="mixed_berry.png" alt="ZOOY Mixed Berry">
                 </div>
                 <div class="card-info">
                     <h3>ZOOY 30ml 30mg - mixed berry</h3>
@@ -208,7 +215,7 @@
             <!-- Produkt 2 -->
             <article class="catalog-card glass-panel">
                 <div class="card-image">
-                    <img src="ZOOY_liquidy.png" alt="ZOOY Grape Cherry">
+                    <img src="grape_cherry.png" alt="ZOOY Grape Cherry">
                 </div>
                 <div class="card-info">
                     <h3>ZOOY 30ml 30mg - grape cherry</h3>
@@ -220,7 +227,7 @@
             <!-- Produkt 3 -->
             <article class="catalog-card glass-panel">
                 <div class="card-image">
-                    <img src="ZOOY_liquidy.png" alt="ZOOY Juicy Peach">
+                    <img src="juicy_peach.png" alt="ZOOY Juicy Peach">
                 </div>
                 <div class="card-info">
                     <h3>ZOOY 30ml 30mg - juicy peach</h3>
@@ -232,7 +239,7 @@
             <!-- Produkt 4 -->
             <article class="catalog-card glass-panel">
                 <div class="card-image">
-                    <img src="ZOOY_liquidy.png" alt="ZOOY Rainbow Candy">
+                    <img src="rainbow_candy.png" alt="ZOOY Rainbow Candy">
                 </div>
                 <div class="card-info">
                     <h3>ZOOY 30ml 30mg - rainbow candy</h3>
@@ -244,7 +251,7 @@
             <!-- Produkt 5 -->
             <article class="catalog-card glass-panel">
                 <div class="card-image">
-                    <img src="ZOOY_liquidy.png" alt="ZOOY Blueberry Strawberry Cranberry">
+                    <img src="blueberry_strawberry_cranberry.png" alt="ZOOY Blueberry Strawberry Cranberry">
                 </div>
                 <div class="card-info">
                     <h3>ZOOY 30ml 30mg - blueberry strawberry cranberry</h3>
@@ -256,7 +263,7 @@
             <!-- Produkt 6 -->
             <article class="catalog-card glass-panel">
                 <div class="card-image">
-                    <img src="ZOOY_liquidy.png" alt="ZOOY Strawberry Raspberry">
+                    <img src="strawberry_raspberry.png" alt="ZOOY Strawberry Raspberry">
                 </div>
                 <div class="card-info">
                     <h3>ZOOY 30ml 30mg - strawberry raspberry</h3>
