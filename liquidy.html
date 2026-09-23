@@ -127,6 +127,7 @@
         }
 
         .card-image {
+            position: relative; /* Enables absolute positioning for badge overlay */
             height: 280px;
             background-color: #000;
             border-bottom: 3px solid var(--neon-purple);
@@ -144,6 +145,23 @@
             transform: scale(1.05);
         }
 
+        /* Tag Badge styling */
+        .tag-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--neon-purple);
+            color: var(--text-light);
+            font-weight: 900;
+            font-size: 0.85rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 0 10px rgba(88, 0, 81, 0.6);
+            z-index: 2;
+        }
+
         .card-info {
             padding: 1.5rem;
             flex: 1;
@@ -154,7 +172,7 @@
         .card-info h3 {
             font-size: 1.4rem;
             text-shadow: rgb(99, 98, 98) 2px 3px;
-            color: var(--);
+            color: var(--text-light);
             margin-bottom: 0.5rem;
             text-transform: uppercase;
         }
@@ -205,6 +223,7 @@
             <!-- Produkt 1 -->
             <article class="catalog-card glass-panel">
                 <div class="card-image">
+                    <span class="tag-badge">3X VÄČŠIE</span>
                     <img src="mixed_berry.png" alt="ZOOY Mixed Berry">
                 </div>
                 <div class="card-info">
@@ -217,6 +236,7 @@
             <!-- Produkt 2 -->
             <article class="catalog-card glass-panel">
                 <div class="card-image">
+                    <span class="tag-badge">3X VÄČŠIE</span>
                     <img src="grape_cherry.png" alt="ZOOY Grape Cherry">
                 </div>
                 <div class="card-info">
@@ -229,6 +249,7 @@
             <!-- Produkt 3 -->
             <article class="catalog-card glass-panel">
                 <div class="card-image">
+                    <span class="tag-badge">3X VÄČŠIE</span>
                     <img src="juicy_peach.png" alt="ZOOY Juicy Peach">
                 </div>
                 <div class="card-info">
@@ -241,6 +262,7 @@
             <!-- Produkt 4 -->
             <article class="catalog-card glass-panel">
                 <div class="card-image">
+                    <span class="tag-badge">3X VÄČŠIE</span>
                     <img src="rainbow_candy.png" alt="ZOOY Rainbow Candy">
                 </div>
                 <div class="card-info">
@@ -253,6 +275,7 @@
             <!-- Produkt 5 -->
             <article class="catalog-card glass-panel">
                 <div class="card-image">
+                    <span class="tag-badge">3X VÄČŠIE</span>
                     <img src="blueberry_strawberry_cranberry.png" alt="ZOOY Blueberry Strawberry Cranberry">
                 </div>
                 <div class="card-info">
@@ -265,6 +288,7 @@
             <!-- Produkt 6 -->
             <article class="catalog-card glass-panel">
                 <div class="card-image">
+                    <span class="tag-badge">3X VÄČŠIE</span>
                     <img src="strawberry_raspberry.png" alt="ZOOY Strawberry Raspberry">
                 </div>
                 <div class="card-info">
