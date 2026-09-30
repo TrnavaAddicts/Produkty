@@ -9,6 +9,7 @@
             --neon-purple: #a600ff;
             --neon-green: #00ff00;
             --neon-yellow: #ffff00;
+            --neon-blue: #00f0ff;
             --text-light: #ffffff;
             --text-dark: #121212;
         }
@@ -106,10 +107,12 @@
             width: 100%;
         }
 
-        .catalog-grid {
+        /* Nové rozloženie pre produkt a text vedľa seba */
+        .product-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: 350px 1fr;
+            gap: 2.5rem;
+            align-items: center;
             justify-content: center;
         }
 
@@ -154,7 +157,6 @@
         .card-info h3 {
             font-size: 1.4rem;
             text-shadow: rgb(99, 98, 98) 2px 3px;
-            color: var(--);
             margin-bottom: 0.5rem;
             text-transform: uppercase;
         }
@@ -173,6 +175,38 @@
             line-height: 1.5;
         }
 
+        /* Panel pre text vedľa produktu */
+        .side-text-panel {
+            padding: 2.5rem;
+            border-radius: 16px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .neon-heading {
+            color: var(--neon-green);
+            text-shadow: 0 0 20px var(--neon-green), 0 0 30px var(--neon-purple);
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            line-height: 1.3;
+        }
+
+        /* Modrá varianta neónového nadpisu */
+        .neon-heading-blue {
+            color: var(--neon-blue);
+            text-shadow: 0 0 20px var(--neon-blue), 0 0 30px var(--neon-purple);
+            font-size: 2.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            line-height: 1.3;
+        }
+
         footer {
             text-align: center;
             padding: 1.5rem;
@@ -182,9 +216,17 @@
             color: #ffffff;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 850px) {
             header h1 { font-size: 2.2rem; }
-            .catalog-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+            .neon-heading {
+                font-size: 1.5rem;
+            }
+            .neon-heading-blue {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
@@ -192,89 +234,34 @@
 
     <header class="glass-panel">
         <img src="logo.png" alt="TRNAVA ADDICTS Logo" class="logo">
-        <h1>VAPY 150k 6in1 - SORTIMENT</h1>
-        <p>Aktuálna ponuka našich 150k VAPE!</p>
-<h2 style="color: var(--neon-green); text-shadow: 0 0 20px var(--neon-green), 0 0 30px var(--neon-purple);">OBJEDNÁVAJ CEZ INSTAGRAM SKRZ SPRÁVY</h2> <h2>‎ </h2>
+        <h1>VAPY 600k 6in1 - SORTIMENT</h1>
+        <p>Aktuálna ponuka našich 600k VAPE!</p>
+        <h2 class="neon-heading" style="font-size: 1.6rem; margin-bottom: 1rem;">OBJEDNÁVAJ CEZ INSTAGRAM SKRZ SPRÁVY</h2>
         <a href="index.html" class="btn-back">← Späť na hlavnú stránku</a>
     </header>
 
     <main>
-        <div class="catalog-grid">
+        <div class="product-container">
 
-            <!-- Produkt 1 -->
+            <!-- Produkt -->
             <article class="catalog-card glass-panel">
                 <div class="card-image">
-                    <img src="vape2.png" alt="">
+                    <img src="fihp600k.png" alt="FIHP 600k 6in1">
                 </div>
                 <div class="card-info">
-                    <h3>UZY 150k 6in1</h3>
-                    <div class="price">Cena: 15€</div>
+                    <h3>FIHP 600k 6in1</h3>
+                    <div class="price">Cena: 30€</div>
                     <p style="color:rgb(0, 255, 221);">Prichuť:</p>
-                    <p>Blueberry Ice / Raspberry Lemon / Watermelon Bubblegum </p>
+                    <p>Lady Killa / Love 666 / Strawberry Margarita / Blueberry Kiwi / Watermelon Ice / White Peach Raspberry </p>
                     <p style="color:rgb(0, 255, 221);">-</p>
-                    <p>Každá vapa má 3 príchute, ktoré sa zmiešavajú do troch ďaľších, čo celkovo tvorí 6 rozlišných.</p>
+                    <p>6 prichutí v jednej, 600 000 poťahov, treba k tomu snáď ešte niečo povedať 😛?</p>
                 </div>
             </article>
 
-            <!-- Produkt 2 -->
-            <article class="catalog-card glass-panel">
-                <div class="card-image">
-                    <img src="vape1.png" alt="">
-                </div>
-                <div class="card-info">
-                    <h3>UZY 150k 6in1</h3>
-                    <div class="price">Cena: 15€</div>
-                    <p style="color:rgb(0, 255, 221);">Prichuť:</p>
-                    <p>Mixed Berry / Fizzy Cherry / Peach Lemon </p>
-                    <p style="color:rgb(0, 255, 221);">-</p>
-                    <p>Každá vapa má 3 príchute, ktoré sa zmiešavajú do troch ďaľších, čo celkovo tvorí 6 rozlišných.</p>
-                </div>
-            </article>
-
-            <!-- Produkt 3 -->
-            <article class="catalog-card glass-panel">
-                <div class="card-image">
-                    <img src="vape3.png" alt="ZOOY Juicy Peach">
-                </div>
-                <div class="card-info">
-                    <h3>UZY 150k 6in1</h3>
-                    <div class="price">Cena: 15€</div>
-                    <p style="color:rgb(0, 255, 221);">Prichuť:</p>
-                    <p>Grape Ice / Mango Peach / Blueberry Watermelon </p>
-                    <p style="color:rgb(0, 255, 221);">-</p>
-                    <p>Každá vapa má 3 príchute, ktoré sa zmiešavajú do troch ďaľších, čo celkovo tvorí 6 rozlišných.</p>
-                </div>
-            </article>
-
-            <!-- Produkt 4 -->
-            <article class="catalog-card glass-panel">
-                <div class="card-image">
-                    <img src="vape5.png" alt="">
-                </div>
-                <div class="card-info">
-                    <h3>UZY 150k 6in1</h3>
-                    <div class="price">Cena: 15€</div>
-                    <p style="color:rgb(0, 255, 221);">Prichuť:</p>
-                    <p>Strawberry Kiwi / Blueberry Ice / Cherry Ice </p>
-                    <p style="color:rgb(0, 255, 221);">-</p>
-                    <p>Každá vapa má 3 príchute, ktoré sa zmiešavajú do troch ďaľších, čo celkovo tvorí 6 rozlišných.</p>
-                </div>
-            </article>
-
-            <!-- Produkt 5 -->
-            <article class="catalog-card glass-panel">
-                <div class="card-image">
-                    <img src="vape4.png" alt="">
-                </div>
-                <div class="card-info">
-                    <h3>UZY 150k 6in1</h3>
-                    <div class="price">Cena: 15€</div>
-                    <p style="color:rgb(0, 255, 221);">Prichuť:</p>
-                    <p>Strawberry Dragon Fruit / Red Bull / Raspberry Watermelon </p>
-                    <p style="color:rgb(0, 255, 221);">-</p> 
-                    <p>Každá vapa má 3 príchute, ktoré sa zmiešavajú do troch ďaľších, čo celkovo tvorí 6 rozlišných.</p>
-                </div>
-            </article>
+            <!-- Text vedľa produktu v modrej neónovej variante -->
+            <div class="side-text-panel">
+                <h2 class="neon-heading-blue">NOVŠIE, VÄČŠIE, VÝHODNEJŠIE!</h2>
+            </div>
 
         </div>
     </main>
