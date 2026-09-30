@@ -127,7 +127,7 @@
         }
 
         .card-image {
-            position: relative; /* Enables absolute positioning for badge overlay */
+            position: relative;
             height: 280px;
             background-color: #000;
             border-bottom: 3px solid var(--neon-purple);
@@ -138,14 +138,35 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        /* Nové štýly pre stmavenie a text "Už čoskoro!" */
+        .card-image.coming-soon img {
+            filter: brightness(0.3);
+        }
+
+        .card-image.coming-soon::after {
+            content: "Už čoskoro!";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: center;
+            white-space: nowrap;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.9), 0 0 20px var(--neon-purple);
+            z-index: 3;
+            pointer-events: none;
         }
 
         .catalog-card:hover .card-image img {
             transform: scale(1.05);
         }
 
-        /* Tag Badge styling */
         .tag-badge {
             position: absolute;
             top: 10px;
@@ -212,7 +233,8 @@
         <img src="logo.png" alt="TRNAVA ADDICTS Logo" class="logo">
         <h1>LIQUIDY - SORTIMENT</h1>
         <p>Aktuálna ponuka našich LIQUIDOV!</p>
-        <h2>🚨OBJEDNÁVAJ CEZ INSTAGRAM SKRZ SPRÁVY🚨</h2>
+        
+        <h2 style="color: var(--neon-green); text-shadow: 0 0 20px var(--neon-green), 0 0 30px var(--neon-purple);">OBJEDNÁVAJ CEZ INSTAGRAM SKRZ SPRÁVY</h2>
         <h2>‎ </h2>
         <a href="index.html" class="btn-back">← Späť na hlavnú stránku</a>
     </header>
@@ -228,6 +250,45 @@
                 </div>
                 <div class="card-info">
                     <h3>ZOOY 30ml 30mg - mixed berry</h3>
+                    <div class="price">Cena: 15€</div>
+                    <p>2x výhodnejší oproti klasickým 10ml liquidom čo kúpiš v trafike!</p>
+                </div>
+            </article>
+
+            <!-- Produkt ZOOY 30ml 50mg - Grape Raspberry -->
+            <article class="catalog-card glass-panel">
+                <div class="card-image coming-soon">
+                    <span class="tag-badge">3X VÄČŠIE</span>
+                    <img src="grape raspberry.png" alt="ZOOY Grape Raspberry">
+                </div>
+                <div class="card-info">
+                    <h3>ZOOY 30ml 50mg - Grape Raspberry</h3>
+                    <div class="price">Cena: 15€</div>
+                    <p>2x výhodnejší oproti klasickým 10ml liquidom čo kúpiš v trafike!</p>
+                </div>
+            </article>
+
+            <!-- Produkt ZOOY 30ml 50mg - Dragon Fruit Passion -->
+            <article class="catalog-card glass-panel">
+                <div class="card-image coming-soon">
+                    <span class="tag-badge">3X VÄČŠIE</span>
+                    <img src="dragon fruit passion.png" alt="ZOOY Dragon Fruit Passion">
+                </div>
+                <div class="card-info">
+                    <h3>ZOOY 30ml 50mg - Dragon Fruit Passion</h3>
+                    <div class="price">Cena: 15€</div>
+                    <p>2x výhodnejší oproti klasickým 10ml liquidom čo kúpiš v trafike!</p>
+                </div>
+            </article>
+
+            <!-- Produkt ZOOY 30ml 50mg - MR Blue -->
+            <article class="catalog-card glass-panel">
+                <div class="card-image coming-soon">
+                    <span class="tag-badge">3X VÄČŠIE</span>
+                    <img src="mrblue.png" alt="ZOOY MR Blue">
+                </div>
+                <div class="card-info">
+                    <h3>ZOOY 30ml 50mg - MR Blue</h3>
                     <div class="price">Cena: 15€</div>
                     <p>2x výhodnejší oproti klasickým 10ml liquidom čo kúpiš v trafike!</p>
                 </div>

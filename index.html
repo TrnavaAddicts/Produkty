@@ -9,6 +9,7 @@
             --neon-purple: #a600ff;
             --neon-green: #00ff00;
             --neon-yellow: #ffff00;
+            --neon-blue: #3734ff; /* Pridaná neonovo modrá */
             --text-light: #ffffff;
             --text-dark: #121212;
         }
@@ -116,6 +117,7 @@
         }
 
         .product-image {
+            position: relative; /* Potrebné pre korektné umiestnenie nápisu */
             height: 400px; 
             background-color: #000;
             display: flex;
@@ -129,7 +131,30 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 0.5s ease, filter 0.3s ease;
+        }
+
+        /* --- Štýly pre efekt 'Už čoskoro!' --- */
+        .product-image.coming-soon img {
+            filter: brightness(0.25); /* Stmavenie obrázka */
+        }
+
+        .product-image.coming-soon::after {
+            content: "Už čoskoro!";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            font-size: 2.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            white-space: nowrap;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.9), 0 0 20px var(--neon-blue);
+            z-index: 2;
+            pointer-events: none;
         }
 
         .product-card:hover .product-image img {
@@ -176,18 +201,35 @@
             cursor: pointer;
         }
 
-        .btn-green 
-        { border-color: var(--text-dark);
+        .btn-green { 
+            border-color: var(--text-dark);
             border-width: 0.2rem;
             box-shadow: 0 0 15px var(--neon-green);
-        background-color: var(--neon-green);
-        color: var(--text-dark);
+            background-color: var(--neon-green);
+            color: black;
         }
+
         .btn-green:hover {
             border-color: var(--neon-green);
             background: var(--neon-green);
-            box-shadow: 0 0 15px var(--neon-green);
+            box-shadow: 0 0 25px var(--neon-green);
             color: var(--text-dark);
+        }
+
+        /* Nové modré tlačidlo */
+        .btn-blue { 
+            border-color: var(--text-dark);
+            border-width: 0.2rem;
+            box-shadow: 0 0 15px var(--neon-blue);
+            background-color: var(--neon-blue);
+            color: var(--text-light);
+        }
+
+        .btn-blue:hover {
+            border-color: var(--neon-blue);
+            background: var(--neon-blue);
+            box-shadow: 0 0 25px var(--neon-blue);
+            color: var(--text-light);
         }
 
         footer {
@@ -204,6 +246,7 @@
             .logo { width: 140px; height: 140px; }
             .product-container { gap: 2rem; }
             .product-image { height: 350px; }
+            .product-image.coming-soon::after { font-size: 1.7rem; }
         }
     </style>
 </head>
@@ -211,10 +254,11 @@
 
     <header class="glass-panel">
         <img src="logo.png" alt="TRNAVA ADDICTS Logo" class="logo">
-        <h1>TRNAVA ADDICTS</h1>
-        <p>Nikotínové produkty za najlepšie ceny!</p>
-        <h2>-</h2>
-        <h2>🚨OBJEDNÁVAJ CEZ INSTAGRAM SKRZ SPRÁVY🚨</h2>
+        <h1 style="text-shadow: #afafaf 0 0 35px;">TRNAVA ADDICTS</h1>
+        <h3>‎</h3>
+        <p style="color: white;">Nikotínové produkty za najlepšie ceny!</p>
+        <h2>‎ </h2>
+        <h2 style="color: var(--neon-green); text-shadow: 0 0 20px var(--neon-green), 0 0 30px var(--neon-purple);">OBJEDNÁVAJ CEZ INSTAGRAM SKRZ SPRÁVY</h2> 
     </header>
 
     <main>
@@ -247,9 +291,21 @@
                     <img src="TT_Addicts_VAPE_V2.jpg" alt="TRNAVA ADDICTS Vapy">
                 </div>
                 <div class="product-info">
-                    <h2 style="color: var(--neon-green);">VAPY</h2>
+                    <h2 style="color: var(--neon-green);">VAPY - 150k 6in1</h2>
                     <p>150 000 poťahov a 6 príchutí v JEDNEJ VAPE. Rozklikni aby si videl všetky dostupné príchute!</p>
                     <a href="vapy.html" class="btn btn-green">KLIK!</a>
+                </div>
+            </article>
+
+            <article class="product-card glass-panel">
+                <!-- PRIDANÁ TRIEDA 'coming-soon' PRE STMAVENIE A NÁPIS -->
+                <div class="product-image coming-soon" style="border-bottom-color: rgb(63, 60, 255);">
+                    <img src="vape2prednyobrazok.png" alt="TRNAVA ADDICTS Vapy2">
+                </div>
+                <div class="product-info">
+                    <h2 style="color: white; text-shadow: #3734ff 0 0 25px;">VAPY - 600k 6in1</h2>
+                    <p>600 000 poťahov a 6 príchutí v JEDNEJ VAPE. Rozklikni aby si videl všetky dostupné príchute!</p>
+                    <a href="vapy2.html" class="btn btn-blue">UŽ ČOSKORO!</a>
                 </div>
             </article>
 
