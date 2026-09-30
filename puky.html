@@ -167,6 +167,28 @@
             margin-bottom: 0.8rem;
         }
 
+         /* Nové štýly pre stmavenie a text "Už čoskoro!" */
+        .card-image.coming-soon img {
+            filter: brightness(0.3);
+        }
+
+        .card-image.coming-soon::after {
+            content: "Už čoskoro!";
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: center;
+            white-space: nowrap;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.9), 0 0 20px var(--neon-purple);
+            z-index: 3;
+            pointer-events: none;
+        }
+
         .card-info p {
             font-size: 0.95rem;
             font-weight: 650;
@@ -411,14 +433,14 @@
                 <div class="card-info">
                     <h3>Iceberg Grape strips</h3>
                     <div class="price">Cena: 5€</div>
-                    <p>Na sklade: 10 kusov</p>
+                    <p>Na sklade: 20 kusov</p>
                    <p> Počet stripov: 55</p>
                     <p> Sila: 12mg</p>
                 </div>
             </article>
 
             <article class="catalog-card glass-panel">
-                <div class="card-image">
+                <div class="card-image coming-soon">
                     <img src="Iceberg-Black-Strips-Iceberg-423395055.png" alt="Puk 1">
                 </div>
                 <div class="card-info">
