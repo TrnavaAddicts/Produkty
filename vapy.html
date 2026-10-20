@@ -131,6 +131,7 @@
             background-color: #000;
             border-bottom: 3px solid var(--neon-purple);
             overflow: hidden;
+            position: relative; /* Pridané pre správne umiestnenie nápisu coming-soon */
         }
 
         .card-image img {
@@ -166,6 +167,27 @@
             margin-bottom: 0.8rem;
         }
 
+        .card-image.coming-soon img {
+            filter: brightness(0.3);
+        }
+
+        .card-image.coming-soon::after {
+            content: "Už čoskoro!";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #ffffff;
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-align: center;
+            white-space: nowrap;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.9), 0 0 20px var(--neon-purple);
+            z-index: 3;
+            pointer-events: none;
+        }
+
         .card-info p {
             font-size: 0.95rem;
             font-weight: 650;
@@ -194,8 +216,8 @@
         <img src="logo.png" alt="TRNAVA ADDICTS Logo" class="logo">
         <h1>VAPY 150k 6in1 - SORTIMENT</h1>
         <p>Aktuálna ponuka našich 150k VAPE!</p>
-<h2 style="color: var(--neon-green); text-shadow: 0 0 20px var(--neon-green), 0 0 30px var(--neon-purple);">OBJEDNÁVAJ CEZ INSTAGRAM SKRZ SPRÁVY</h2> 
- <h2 style="color: var(--neon-green); text-shadow: 0 0 20px var(--neon-green), 0 0 30px var(--neon-purple);">@trnava_addicts</h2> 
+        <h2 style="color: var(--neon-green); text-shadow: 0 0 20px var(--neon-green), 0 0 30px var(--neon-purple);">OBJEDNÁVAJ CEZ INSTAGRAM SKRZ SPRÁVY</h2> 
+        <h2 style="color: var(--neon-green); text-shadow: 0 0 20px var(--neon-green), 0 0 30px var(--neon-purple);">@trnava_addicts</h2> 
         <h2>‎ </h2>
         <a href="index.html" class="btn-back">← Späť na hlavnú stránku</a>
     </header>
@@ -203,7 +225,7 @@
     <main>
         <div class="catalog-grid">
 
- <!-- Produkt 4 -->
+            <!-- Produkt 4 (má fotku) -->
             <article class="catalog-card glass-panel">
                 <div class="card-image">
                     <img src="ludrica.png" alt="">
@@ -218,7 +240,7 @@
                 </div>
             </article>
 
-            <!-- Produkt 1 -->
+            <!-- Produkt 1 (má fotku) -->
             <article class="catalog-card glass-panel">
                 <div class="card-image">
                     <img src="vape2.png" alt="">
@@ -233,15 +255,39 @@
                 </div>
             </article>
 
-           
-
-            <!-- Produkt 3 -->
-            
-
-
-            <!-- Produkt 5 -->
+            <!-- Bez fotky -> pridaná trieda coming-soon -->
             <article class="catalog-card glass-panel">
-                <div class="card-image">
+                <div class="card-image coming-soon">
+                    <img src="vejpinkaxyz1.png" alt="">
+                </div>
+                <div class="card-info">
+                    <h3>UZY 150k 6in1</h3>
+                    <div class="price">Cena: 15€</div>
+                    <p style="color:rgb(0, 255, 221);">Prichuť:</p>
+                    <p>Grape Ice / Mango Peach / Blueberry Watermelon </p>
+                    <p style="color:rgb(0, 255, 221);">-</p>
+                    <p>Každá vapa má 3 príchute, ktoré sa zmiešavajú do troch ďaľších, čo celkovo tvorí 6 rozlišných.</p>
+                </div>
+            </article>
+
+            <!-- Bez fotky -> pridaná trieda coming-soon -->
+            <article class="catalog-card glass-panel">
+                <div class="card-image coming-soon">
+                    <img src="vejpinkaxyz2ka.png" alt="">
+                </div>
+                <div class="card-info">
+                    <h3>UZY 150k 6in1</h3>
+                    <div class="price">Cena: 15€</div>
+                    <p style="color:rgb(0, 255, 221);">Prichuť:</p>
+                    <p>Kiwi Passion Fruit Guava / Peach Lemon / Love 66 </p>
+                    <p style="color:rgb(0, 255, 221);">-</p>
+                    <p>Každá vapa má 3 príchute, ktoré sa zmiešavajú do troch ďaľších, čo celkovo tvorí 6 rozlišných.</p>
+                </div>
+            </article>
+
+            <!-- Bez fotky -> pridaná trieda coming-soon -->
+            <article class="catalog-card glass-panel">
+                <div class="card-image coming-soon">
                     <img src="vape4.png" alt="">
                 </div>
                 <div class="card-info">
@@ -249,7 +295,22 @@
                     <div class="price">Cena: 15€</div>
                     <p style="color:rgb(0, 255, 221);">Prichuť:</p>
                     <p>Strawberry Dragon Fruit / Red Bull / Raspberry Watermelon </p>
-                    <p style="color:rgb(0, 255, 221);">-</p> 
+                    <p style="color:rgb(0, 255, 221);">-</p>
+                    <p>Každá vapa má 3 príchute, ktoré sa zmiešavajú do troch ďaľších, čo celkovo tvorí 6 rozlišných.</p>
+                </div>
+            </article>
+
+            <!-- Bez fotky -> pridaná trieda coming-soon -->
+            <article class="catalog-card glass-panel">
+                <div class="card-image coming-soon">
+                    <img src="vejpinkaxyz3ka.png" alt="">
+                </div>
+                <div class="card-info">
+                    <h3>UZY 150k 6in1</h3>
+                    <div class="price">Cena: 15€</div>
+                    <p style="color:rgb(0, 255, 221);">Prichuť:</p>
+                    <p>Peach Ice / Two Apple / Triple Mango </p>
+                    <p style="color:rgb(0, 255, 221);">-</p>
                     <p>Každá vapa má 3 príchute, ktoré sa zmiešavajú do troch ďaľších, čo celkovo tvorí 6 rozlišných.</p>
                 </div>
             </article>
