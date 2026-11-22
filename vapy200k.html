@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRNAVA ADDICTS | Sortiment - Liquidy</title>
+    <style>
+        :root {
+            --neon-purple: #a600ff;
+            --neon-green: #00ff00;
+            --neon-yellow: #ffff00;
+            --neon-cyan: #00ffdd;
+            --text-light: #ffffff;
+            --text-muted: #d1d1d1;
+            --text-dark: #121212;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0e0e12;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(166, 0, 255, 0.12), transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(0, 255, 0, 0.08), transparent 40%);
+            background-attachment: fixed;
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .glass-panel {
+            background: rgba(22, 22, 28, 0.78);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        header {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            width: 115px;
+            height: 115px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            box-shadow: 0 0 25px rgba(166, 0, 255, 0.65);
+            border: 3px solid var(--neon-yellow);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, var(--neon-purple), var(--neon-green), var(--neon-yellow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.4rem;
+        }
+
+        .subtitle {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.2rem;
+        }
+
+        .order-banner {
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+
+        .order-banner h2 {
+            font-size: 1.25rem;
+            color: var(--neon-green);
+            text-shadow: 0 0 15px rgba(0, 255, 0, 0.5), 0 0 25px rgba(166, 0, 255, 0.6);
+            letter-spacing: 0.5px;
+        }
+
+        .order-banner .ig-handle {
+            font-size: 1.45rem;
+            font-weight: 900;
+            color: var(--text-light);
+            text-shadow: 0 0 15px var(--neon-purple);
+            margin-top: 0.2rem;
+        }
+
+        .btn-back {
+            display: inline-block;
+            padding: 0.65rem 1.4rem;
+            background: var(--neon-purple);
+            box-shadow: 0 0 15px rgba(166, 0, 255, 0.6);
+            color: var(--text-light);
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            transition: all 0.25s ease;
+        }
+
+        .btn-back:hover {
+            background: transparent;
+            border-color: var(--neon-purple);
+            box-shadow: 0 0 20px var(--neon-purple);
+            transform: translateY(-2px);
+        }
+
+        main {
+            flex: 1;
+            padding: 1.5rem 1rem 3rem;
+            max-width: 1240px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 2rem;
+            align-items: stretch;
+        }
+
+        .catalog-card {
+            border-radius: 18px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .catalog-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(166, 0, 255, 0.5);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(166, 0, 255, 0.2);
+        }
+
+        .card-image {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            max-height: 360px;
+            padding: 1.25rem;
+            background: radial-gradient(circle at center, rgba(166, 0, 255, 0.18) 0%, rgba(14, 14, 18, 0.4) 75%);
+            border-bottom: 2px solid var(--neon-purple);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.75));
+            transition: transform 0.35s ease;
+        }
+
+        .catalog-card:hover .card-image img {
+            transform: scale(1.06);
+        }
+
+        .card-image.coming-soon img {
+            filter: brightness(0.32) blur(1px);
+        }
+
+        .card-image.coming-soon::after {
+            content: "Už čoskoro!";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 0.5rem 1.2rem;
+            background: rgba(18, 18, 24, 0.75);
+            border: 1px solid var(--neon-purple);
+            border-radius: 999px;
+            color: #ffffff;
+            font-size: 1.35rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            white-space: nowrap;
+            box-shadow: 0 0 20px rgba(166, 0, 255, 0.7);
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .card-info {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-info h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .price-badge {
+            background: rgba(255, 255, 0, 0.12);
+            border: 1px solid var(--neon-yellow);
+            color: var(--neon-yellow);
+            font-size: 1.15rem;
+            font-weight: 800;
+            padding: 0.25rem 0.75rem;
+            border-radius: 8px;
+            white-space: nowrap;
+            box-shadow: 0 0 10px rgba(255, 255, 0, 0.15);
+        }
+
+        .flavors-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--neon-cyan);
+            margin-bottom: 0.6rem;
+        }
+
+        .flavors-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .flavor-tag {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #f0f0f0;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+        }
+
+        .card-specs {
+            margin-top: auto;
+            padding-top: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            line-height: 1.45;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 768px) {
+            header h1 { font-size: 2rem; }
+            .order-banner h2 { font-size: 1.05rem; }
+            .catalog-grid { grid-template-columns: 1fr; }
+            .card-image { aspect-ratio: 1 / 1; max-height: 300px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="glass-panel">
+        <img src="logo.png" alt="TRNAVA ADDICTS Logo" class="logo">
+        <h1>VAPY 200k 6in1 - SORTIMENT</h1>
+        <p class="subtitle">Aktuálna ponuka našich 200k VAPE!</p>
+        <div class="order-banner">
+            <h2>OBJEDNÁVAJ CEZ INSTAGRAM SKRZ SPRÁVY</h2>
+            <div class="ig-handle">@trnava_addicts</div>
+        </div>
+        <a href="index.html" class="btn-back">← Späť na hlavnú stránku</a>
+    </header>
+
+    <main>
+        <div class="catalog-grid">
+
+            <!-- Karta 1 -->
+            <article class="catalog-card glass-panel">
+                <div class="card-image coming-soon">
+                    <img src="Bang-Blaze-200k.png" alt="Bang Blaze 200K 6in1 - Edícia 1">
+                </div>
+                <div class="card-info">
+                    <div class="card-header">
+                        <h3>Bang Blaze 200K 6in1</h3>
+                        <span class="price-badge">20 €</span>
+                    </div>
+                    <div class="flavors-label">6 príchutí v jednom:</div>
+                    <div class="flavors-list">
+                        <span class="flavor-tag">Triple Mango</span>
+                        <span class="flavor-tag">Grape Peach</span>
+                        <span class="flavor-tag">Strawberry Ice Cream</span>
+                        <span class="flavor-tag">Strawberry Kiwi</span>
+                        <span class="flavor-tag">Grape Energy</span>
+                        <span class="flavor-tag">Red Cola</span>
+                    </div>
+                    <p class="card-specs">6 rozlišných príchutí, 200k potiahnutí a displej, ktorý všetko ukazuje 💫</p>
+                </div>
+            </article>
+
+            <!-- Karta 2 -->
+            <article class="catalog-card glass-panel">
+                <div class="card-image coming-soon">
+                    <img src="Bang-Blaze-200k.png" alt="Bang Blaze 200K 6in1 - Edícia 2">
+                </div>
+                <div class="card-info">
+                    <div class="card-header">
+                        <h3>Bang Blaze 200K 6in1</h3>
+                        <span class="price-badge">20 €</span>
+                    </div>
+                    <div class="flavors-label">6 príchutí v jednom:</div>
+                    <div class="flavors-list">
+                        <span class="flavor-tag">Cherry Ice</span>
+                        <span class="flavor-tag">Pink Lemon</span>
+                        <span class="flavor-tag">Blueberry Mint</span>
+                        <span class="flavor-tag">Banana Ice Cream</span>
+                        <span class="flavor-tag">Passion Fruit Pineapple Peach Ice</span>
+                        <span class="flavor-tag">Green Apple Kiwi</span>
+                    </div>
+                    <p class="card-specs">6 rozlišných príchutí, 200k potiahnutí a displej, ktorý všetko ukazuje 💫</p>
+                </div>
+            </article>
+
+            <!-- Karta 3 -->
+            <article class="catalog-card glass-panel">
+                <div class="card-image coming-soon">
+                    <img src="Bang-Blaze-200k.png" alt="Bang Blaze 200K 6in1 - Edícia 3">
+                </div>
+                <div class="card-info">
+                    <div class="card-header">
+                        <h3>Bang Blaze 200K 6in1</h3>
+                        <span class="price-badge">20 €</span>
+                    </div>
+                    <div class="flavors-label">6 príchutí v jednom:</div>
+                    <div class="flavors-list">
+                        <span class="flavor-tag">Rainbow Candy</span>
+                        <span class="flavor-tag">Peach Pear Ice</span>
+                        <span class="flavor-tag">Cappuccino</span>
+                        <span class="flavor-tag">Fresh Mint Mojito</span>
+                        <span class="flavor-tag">Strawberry Mango Blackcurrant</span>
+                        <span class="flavor-tag">Marshmallow</span>
+                    </div>
+                    <p class="card-specs">6 rozlišných príchutí, 200k potiahnutí a displej, ktorý všetko ukazuje 💫</p>
+                </div>
+            </article>
+
+            <!-- Karta 4 -->
+            <article class="catalog-card glass-panel">
+                <div class="card-image coming-soon">
+                    <img src="Bang-Blaze-200k.png" alt="Bang Blaze 200K 6in1 - Edícia 4">
+                </div>
+                <div class="card-info">
+                    <div class="card-header">
+                        <h3>Bang Blaze 200K 6in1</h3>
+                        <span class="price-badge">20 €</span>
+                    </div>
+                    <div class="flavors-label">6 príchutí v jednom:</div>
+                    <div class="flavors-list">
+                        <span class="flavor-tag">Blackcurrant</span>
+                        <span class="flavor-tag">Triple Melon</span>
+                        <span class="flavor-tag">Strawberry Raspberry</span>
+                        <span class="flavor-tag">Super Berry</span>
+                        <span class="flavor-tag">Blueberry Blackberry Strawberry</span>
+                        <span class="flavor-tag">Peach Lemon Water</span>
+                    </div>
+                    <p class="card-specs">6 rozlišných príchutí, 200k potiahnutí a displej, ktorý všetko ukazuje 💫</p>
+                </div>
+            </article>
+
+            <!-- Karta 5 -->
+            <article class="catalog-card glass-panel">
+                <div class="card-image coming-soon">
+                    <img src="Bang-Blaze-200k.png" alt="Bang Blaze 200K 6in1 - Edícia 5">
+                </div>
+                <div class="card-info">
+                    <div class="card-header">
+                        <h3>Bang Blaze 200K 6in1</h3>
+                        <span class="price-badge">20 €</span>
+                    </div>
+                    <div class="flavors-label">6 príchutí v jednom:</div>
+                    <div class="flavors-list">
+                        <span class="flavor-tag">Peach Ice</span>
+                        <span class="flavor-tag">Lemon Lime</span>
+                        <span class="flavor-tag">Strawberry Watermelon</span>
+                        <span class="flavor-tag">Raspberry Grape</span>
+                        <span class="flavor-tag">Strawberry Mamba</span>
+                        <span class="flavor-tag">Cherry Pomegranate</span>
+                    </div>
+                    <p class="card-specs">6 rozlišných príchutí, 200k potiahnutí a displej, ktorý všetko ukazuje 💫</p>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer class="glass-panel">
+        <p>NAPÍŠ A HNEĎ SME U TEBA!</p>
+    </footer>
+
+</body>
+</html>

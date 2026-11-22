@@ -9,8 +9,10 @@
             --neon-purple: #a600ff;
             --neon-green: #00ff00;
             --neon-yellow: #ffff00;
-            --neon-blue: #3734ff; /* Pridaná neonovo modrá */
+            --neon-blue: #3734ff;
+            --neon-blue-glow: #5b59ff;
             --text-light: #ffffff;
+            --text-muted: #d1d1d1;
             --text-dark: #121212;
         }
 
@@ -22,9 +24,10 @@
         }
 
         body {
-            background-color: #141414;
-            background-size: cover;
-            background-position: center;
+            background-color: #0e0e12;
+            background-image: 
+                radial-gradient(circle at 15% 20%, rgba(166, 0, 255, 0.14), transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(0, 255, 0, 0.08), transparent 40%);
             background-attachment: fixed;
             color: var(--text-light);
             min-height: 100vh;
@@ -33,110 +36,151 @@
         }
 
         .glass-panel {
-            background: rgba(18, 18, 18, 0.75);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(22, 22, 28, 0.78);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         header {
             text-align: center;
-            padding: 3rem 1rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            padding: 2.8rem 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         .logo {
-            width: 180px;
-            height: 180px;
+            width: 150px;
+            height: 150px;
             object-fit: cover;
             border-radius: 50%;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 0 20px rgba(166, 0, 255, 0.6);
+            margin-bottom: 1.2rem;
+            box-shadow: 0 0 28px rgba(166, 0, 255, 0.7);
             border: 3px solid var(--neon-yellow);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .logo:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(166, 0, 255, 0.9);
+            box-shadow: 0 0 38px rgba(166, 0, 255, 0.95);
         }
 
         header h1 {
-            font-size: 3.5rem;
-            font-weight: 1000;
-            letter-spacing: 2px;
+            font-size: 3.3rem;
+            font-weight: 900;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
             background: linear-gradient(90deg, var(--neon-purple), var(--neon-green), var(--neon-yellow));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 20px rgba(166, 0, 255, 0.45));
             margin-bottom: 0.5rem;
         }
 
-        header p {
-            font-size: 1.2rem;
-            font-weight: 650;
-            color: #e0e0e0;
+        .subtitle {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-light);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.4rem;
+        }
+
+        .order-banner {
+            line-height: 1.4;
+        }
+
+        .order-banner h2 {
+            font-size: 1.3rem;
+            color: var(--neon-green);
+            text-shadow: 0 0 15px rgba(0, 255, 0, 0.5), 0 0 25px rgba(166, 0, 255, 0.6);
+            letter-spacing: 0.5px;
+        }
+
+        .order-banner .ig-handle {
+            font-size: 1.55rem;
+            font-weight: 900;
+            color: var(--text-light);
+            text-shadow: 0 0 15px var(--neon-purple);
+            margin-top: 0.25rem;
         }
 
         main {
             flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem 1rem;
+            padding: 1.5rem 1rem 3rem;
+            max-width: 1240px;
+            margin: 0 auto;
+            width: 100%;
         }
 
         .product-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 3rem;
-            max-width: 1200px;
-            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.2rem;
             justify-content: center;
+            align-items: stretch;
         }
 
         .product-card {
-            flex: 1 1 350px;
-            max-width: 450px;
-            border-radius: 16px;
+            border-radius: 18px;
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             display: flex;
             flex-direction: column;
         }
 
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+        .product-card.card-green:hover {
+            transform: translateY(-7px);
+            border-color: rgba(0, 255, 0, 0.45);
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.7), 0 0 22px rgba(0, 255, 0, 0.18);
+        }
+
+        .product-card.card-blue:hover {
+            transform: translateY(-7px);
+            border-color: rgba(91, 89, 255, 0.6);
+            box-shadow: 0 14px 32px rgba(0, 0, 0, 0.7), 0 0 24px rgba(55, 52, 255, 0.3);
         }
 
         .product-image {
-            position: relative; /* Potrebné pre korektné umiestnenie nápisu */
-            height: 400px; 
-            background-color: #000;
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            max-height: 340px;
+            padding: 1.5rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-bottom: 3px solid var(--neon-purple);
             overflow: hidden;
         }
-        
+
+        .card-green .product-image {
+            background: radial-gradient(circle at center, rgba(0, 255, 0, 0.14) 0%, rgba(14, 14, 18, 0.45) 75%);
+            border-bottom: 2px solid var(--neon-green);
+        }
+
+        .card-blue .product-image {
+            background: radial-gradient(circle at center, rgba(55, 52, 255, 0.24) 0%, rgba(14, 14, 18, 0.45) 75%);
+            border-bottom: 2px solid var(--neon-blue);
+        }
+
         .product-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease, filter 0.3s ease;
+            object-fit: contain;
+            filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.8));
+            transition: transform 0.35s ease, filter 0.3s ease;
         }
 
-        /* --- Štýly pre efekt 'Už čoskoro!' --- */
+        .product-card:hover .product-image img {
+            transform: scale(1.06);
+        }
+
+        /* Efekt 'Už čoskoro!' */
         .product-image.coming-soon img {
-            filter: brightness(0.25); /* Stmavenie obrázka */
+            filter: brightness(0.32) blur(1px);
         }
 
         .product-image.coming-soon::after {
@@ -145,108 +189,113 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            padding: 0.55rem 1.3rem;
+            background: rgba(18, 18, 24, 0.78);
+            border: 1px solid var(--neon-blue-glow);
+            border-radius: 999px;
             color: #ffffff;
-            font-size: 2.2rem;
+            font-size: 1.45rem;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 1px;
-            text-align: center;
             white-space: nowrap;
-            text-shadow: 0 0 10px rgba(0, 0, 0, 0.9), 0 0 20px var(--neon-blue);
+            box-shadow: 0 0 22px rgba(55, 52, 255, 0.8);
             z-index: 2;
             pointer-events: none;
         }
 
-        .product-card:hover .product-image img {
-            transform: scale(1.05);
-        }
-
         .product-info {
-            padding: 2rem;
+            padding: 1.75rem;
             flex: 1;
             display: flex;
             flex-direction: column;
         }
 
         .product-info h2 {
-            font-size: 1.8rem;
+            font-size: 1.65rem;
             font-weight: 900;
-            margin-bottom: 1rem;
+            margin-bottom: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
+        .card-green .product-info h2 {
+            color: var(--neon-green);
+            text-shadow: 0 0 15px rgba(0, 255, 0, 0.35);
+        }
+
+        .card-blue .product-info h2 {
+            color: var(--text-light);
+            text-shadow: 0 0 20px var(--neon-blue);
+        }
+
         .product-info p {
-            font-size: 1.2rem;
-            font-weight: 550;
-            line-height: 1.6;
+            font-size: 1.05rem;
+            font-weight: 500;
+            line-height: 1.55;
             margin-bottom: 1.5rem;
-            color: #ffffff;
+            color: var(--text-muted);
             flex: 1;
         }
 
         .btn {
-            display: inline-block;
+            display: block;
             text-align: center;
-            font-size: 1.3rem;
+            font-size: 1.15rem;
             padding: 0.8rem 1.5rem;
-            background: transparent;
-            color: var(--text-light);
             text-decoration: none;
             text-transform: uppercase;
-            font-weight: bold;
-            border: 2px solid;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            font-weight: 800;
+            letter-spacing: 1px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            transition: all 0.25s ease;
             cursor: pointer;
         }
 
         .btn-green { 
-            border-color: var(--text-dark);
-            border-width: 0.2rem;
-            box-shadow: 0 0 15px var(--neon-green);
+            box-shadow: 0 0 16px rgba(0, 255, 0, 0.55);
             background-color: var(--neon-green);
-            color: black;
-        }
-
-        .btn-green:hover {
-            border-color: var(--neon-green);
-            background: var(--neon-green);
-            box-shadow: 0 0 25px var(--neon-green);
             color: var(--text-dark);
         }
 
-        /* Nové modré tlačidlo */
+        .btn-green:hover {
+            background-color: transparent;
+            border-color: var(--neon-green);
+            box-shadow: 0 0 24px var(--neon-green);
+            color: var(--neon-green);
+            transform: translateY(-2px);
+        }
+
         .btn-blue { 
-            border-color: var(--text-dark);
-            border-width: 0.2rem;
-            box-shadow: 0 0 15px var(--neon-blue);
+            box-shadow: 0 0 18px rgba(55, 52, 255, 0.7);
             background-color: var(--neon-blue);
             color: var(--text-light);
         }
 
         .btn-blue:hover {
-            border-color: var(--neon-blue);
-            background: var(--neon-blue);
-            box-shadow: 0 0 25px var(--neon-blue);
+            background-color: transparent;
+            border-color: var(--neon-blue-glow);
+            box-shadow: 0 0 26px var(--neon-blue);
             color: var(--text-light);
+            transform: translateY(-2px);
         }
 
         footer {
             text-align: center;
             padding: 1.5rem;
-            margin-top: 2rem;
-            font-size: 0.9rem;
-            font-weight: 650;
-            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-light);
         }
 
         @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .logo { width: 140px; height: 140px; }
-            .product-container { gap: 2rem; }
-            .product-image { height: 350px; }
-            .product-image.coming-soon::after { font-size: 1.7rem; }
+            header h1 { font-size: 2.3rem; }
+            .logo { width: 120px; height: 120px; }
+            .order-banner h2 { font-size: 1.05rem; }
+            .product-container { grid-template-columns: 1fr; gap: 1.75rem; }
+            .product-image { max-height: 290px; }
         }
     </style>
 </head>
@@ -254,66 +303,76 @@
 
     <header class="glass-panel">
         <img src="logo.png" alt="TRNAVA ADDICTS Logo" class="logo">
-        <h1 style="text-shadow: #aa37b4 0 0 35px;">TRNAVA ADDICTS</h1>
-        <h3>‎</h3>
-        <p style="color: white;">Nikotínové produkty za najlepšie ceny!</p>
-        <h2>‎ </h2>
-        <h2 style="color: var(--neon-green); text-shadow: 0 0 20px var(--neon-green), 0 0 30px var(--neon-purple);">OBJEDNÁVAJ CEZ INSTAGRAM SKRZ SPRÁVY</h2> 
-         <h2 style="color: var(--neon-green); text-shadow: 0 0 20px var(--neon-green), 0 0 30px var(--neon-purple);">@trnava_addicts</h2> 
-    </header>
+        <h1>TRNAVA ADDICTS</h1>
+        <p class="subtitle">Nikotínové produkty za najlepšie ceny!</p>
+        <div class="order-banner">
+            <h2>OBJEDNÁVAJ CEZ INSTAGRAM SKRZ SPRÁVY</h2>
+            <div class="ig-handle">@trnava_addicts</div>
+        </div>
     </header>
 
     <main>
         <div class="product-container">
 
-            <article class="product-card glass-panel">
-                <div class="product-image" style="border-bottom-color: var(--neon-green);">
+            <!-- Puky -->
+            <article class="product-card card-green glass-panel">
+                <div class="product-image">
                     <img src="puk.png" alt="TRNAVA ADDICTS Puky">
                 </div>
                 <div class="product-info">
-                    <h2 style="color: var(--neon-green);">PUKY</h2>
+                    <h2>PUKY</h2>
                     <p>Dánska overená kvalita a vždy stála cena s TT Addicts. Rozklikni aby si videl náš momentálny sortiment!</p>
                     <a href="puky.html" class="btn btn-green">KLIK!</a>
                 </div>
             </article>
-            
-<article class="product-card glass-panel">
-                <!-- PRIDANÁ TRIEDA 'coming-soon' PRE STMAVENIE A NÁPIS -->
-                <div class="product-image" style="border-bottom-color: rgb(63, 60, 255);">
-                    <img src="vape2prednyobrazok.png" alt="TRNAVA ADDICTS Vapy2">
-                </div>
-                <div class="product-info">
-                    <h2 style="color: white; text-shadow: #3734ff 0 0 25px;">VAPY - 600k 6in1</h2>
-                    <p>600 000 poťahov a 6 príchutí v JEDNEJ VAPE. Rozklikni aby si videl všetky dostupné príchute!</p>
-                    <a href="vapy2.html" class="btn btn-blue">KLIK!</a>
-                </div>
-            </article>
 
-            <article class="product-card glass-panel">
-                <div class="product-image" style="border-bottom-color: var(--neon-green);">
+            <!-- Liquidy -->
+            <article class="product-card card-green glass-panel">
+                <div class="product-image">
                     <img src="liquid.jpg" alt="TRNAVA ADDICTS Liquidy">
                 </div>
                 <div class="product-info">
-                    <h2 style="color: var(--neon-green);">Liquidy</h2>
+                    <h2>Liquidy</h2>
                     <p>Špičkové liquidy s TOP-TIER cenou. Rozklikni aby si videl všetky dostupné príchute!</p>
                     <a href="liquidy.html" class="btn btn-green">KLIK!</a>
                 </div>
             </article>
 
-            
-            <article class="product-card glass-panel">
-                <div class="product-image" style="border-bottom-color: var(--neon-blue);">
-                    <img src="TT_Addicts_VAPE_V2.jpg" alt="TRNAVA ADDICTS Vapy">
+            <!-- Vapy 200k -->
+            <article class="product-card card-blue glass-panel">
+                <div class="product-image">
+                    <img src="200kfrontimage.jpg" alt="TRNAVA ADDICTS Vapy 200k">
                 </div>
                 <div class="product-info">
-                    <h2 style="color: white; text-shadow: #3734ff 0 0 25px;">VAPY - 150k 6in1</h2>
+                    <h2>VAPY - 200k 6in1</h2>
+                    <p>200 000 poťahov a 6 príchutí v JEDNEJ VAPE. Rozklikni aby si videl všetky dostupné príchute!</p>
+                    <a href="vapy200k.html" class="btn btn-blue">KLIK!</a>
+                </div>
+            </article>
+
+            <!-- Vapy 150k -->
+            <article class="product-card card-blue glass-panel">
+                <div class="product-image">
+                    <img src="TT_Addicts_VAPE_V2.jpg" alt="TRNAVA ADDICTS Vapy 150k">
+                </div>
+                <div class="product-info">
+                    <h2>VAPY - 150k 6in1</h2>
                     <p>150 000 poťahov a 6 príchutí v JEDNEJ VAPE. Rozklikni aby si videl všetky dostupné príchute!</p>
                     <a href="vapy.html" class="btn btn-blue">KLIK!</a>
                 </div>
             </article>
 
-
-            
+            <!-- Vapy 600k -->
+            <article class="product-card card-blue glass-panel">
+                <div class="product-image">
+                    <img src="vape2prednyobrazok.png" alt="TRNAVA ADDICTS Vapy 600k">
+                </div>
+                <div class="product-info">
+                    <h2>VAPY - 600k 6in1</h2>
+                    <p>600 000 poťahov a 6 príchutí v JEDNEJ VAPE. Rozklikni aby si videl všetky dostupné príchute!</p>
+                    <a href="vapy2.html" class="btn btn-blue">KLIK!</a>
+                </div>
+            </article>
 
         </div>
     </main>
